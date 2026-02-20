@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 40px 20px;
-   overflow: hidden;
+  min-height: 100dvh;
 }
 
 .convite-container {
@@ -40,7 +40,7 @@ body {
 .conteudo {
   position: relative;
   z-index: 2;
-  padding: 200px 3px 80px;
+  padding: 19.8vh 20px 80px;
   text-align: center;
 }
 

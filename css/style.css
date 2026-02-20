@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+   overflow: hidden;
+}
+
+.convite-container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #556B2F;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imagem-topo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.imagem-topo {
+  position: relative
+}
+
+.imagem-topo::after {
+  content: "";
+  position: absolute;
+  bottom: -1px; /* evita subpixel */
+  left: 0;
+  width: 100%;
+  height: 400px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.4) 50%,
+    rgba(255,255,255,0.75) 80%,
+    #ffffff 100%
+  );
+}
+
+.conteudo {
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.monograma img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.bencao {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: #777;
+  letter-spacing: 1px;
+
+}
+
+.nomes {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  background: linear-gradient(45deg, #C0C0C0, #6B8E23);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+.data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+}
+
+.mes, .hora {
+  font-size: 16px;
+  color: #555;
+}
+
+.dia {
+  font-size: 40px;
+  color: #6B8E23;
+  font-weight: 600;
+}
+
+.local {
+  margin-top: 20px;
+}
+
+.titulo-local {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #999;
+}
+
+.nome-local {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  margin-top: 8px;
+  color: #444;
+}
+
+.ornamento {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, #C0C0C0, #6B8E23);
+  margin: 30px auto;
+}
+
+.rodape {
+  font-size: 14px;
+  color: #666;
+}
+
+/* TOPO */
+.ornamento-topo {
+  position: absolute;
+  top: 41%;
+  left: 0;
+  width: 100%;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* BASE */
+.ornamento-base {
+  position: absolute;
+  bottom: -2%;
+  right: -4%;
+  width: 200px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.ornamento-lateral {
+  position: absolute;
+  bottom: -6%;
+  right: 74%;
+  width: 200px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.acoes {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Botão circular */
+.botao-circular {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ícone */
+.icone {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 6px;
+}
+
+/* Texto */
+.botao-circular span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Confirmar */
+.confirmar {
+  background: #556B2F;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(85,107,47,0.25);
+}
+
+/* Local */
+.localizacao {
+  border: 2px solid #556B2F;
+  color: #556B2F;
+  background: transparent;
+}
+
+/* Micro animação ao toque */
+.botao-circular:active {
+  transform: scale(0.92);
+}
+
+/* Hover suave (desktop) */
+.botao-circular:hover {
+  transform: translateY(-4px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+
+  .imagem-topo img {
+    height: 300px;
+  }
+
+  .nomes {
+    font-size: 36px;
+    margin: 0;
+  }
+
+  .dia {
+    font-size: 30px;
+  }
+
+  .data {
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+  }
+
+  body {
+    padding: 10px 10px;
+  }
+
+  .conteudo {
+  padding: 0 5px;
+  text-align: center;
+}
+
+.bencao {
+    font-size: 14px;
+}
+
+.monograma img {
+  width: 120px;
+  margin-bottom: 0px;
+}
+
+.ornamento {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, #C0C0C0, #6B8E23);
+  margin: 10px auto;
+}
+
+.nome-local {
+    margin-top: 0;
+}
+
+.ornamento-lateral {
+  right: 58%;
+}
+
+/* Botão circular */
+.botao-circular {
+  width: 70px;
+  height: 70px;
+}
+}

@@ -40,7 +40,7 @@ body {
 .conteudo {
   position: relative;
   z-index: 2;
-  padding: 170px 3px 80px;
+  padding: 200px 3px 80px;
   text-align: center;
 }
 
@@ -199,10 +199,6 @@ body {
 
 /* RESPONSIVO */
 @media (max-width: 600px) {
-
-  .imagem-topo img {
-    height: 300px;
-  }
 
   .nomes {
     font-size: 60px;

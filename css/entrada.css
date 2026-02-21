@@ -5,99 +5,23 @@
 }
 
 body {
-  height: 100dvh;
+  min-height: 100svh;
   background-image: url("../assets/fundo.png");
   background-repeat: no-repeat;
-  background-position: center 48%;
+  background-position: center;
   background-size: cover;
   overflow: hidden;
-  position: relative;
 }
 
-body.seal-button:active {
-  animation: fadeOut 0.8s ease forwards;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.05);
-  }
-}
-
-.seal-button {
-  position: absolute;
-  top: 46%;
-  left: 36%;
-  transform: translate(-50%, -50%);
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-
-  animation: pulse 3s infinite ease-in-out;
-}
-
-.scene.opening .seal-button {
-  animation: none;
-}
-
-/* Imagem do selo */
-.seal-button img {
-  width: 150%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 15px 35px rgba(0,0,0,0.35));
-  transition: transform 0.3s ease;
-}
-
-/* Hover desktop */
-.seal-button:hover img {
-  transform: scale(1.08);
-}
-
-/* Toque mobile */
-.seal-button:active img {
-  transform: scale(0.95);
-}
-
-/* Pulsação suave */
-@keyframes pulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.03); }
-}
-
-/* Animação de abertura */
-body.open {
-  animation: abrir 1.2s ease forwards;
-}
-
-@keyframes abrir {
-  to {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-  }
-}
-
-/* Responsividade */
-@media (max-width: 480px) {
-  .seal-button img {
-    width: 150%;
-  }
-}
-
+/* Container centralizado corretamente */
 .scene {
-  position: relative;
   width: 100%;
-  height: 100%;
-  transition: 
-    transform 4s ease,
-    filter 4s ease,
-    opacity 4s ease;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 4s ease, filter 4s ease, opacity 4s ease;
 }
 
 /* Estado ao clicar */
@@ -107,28 +31,59 @@ body.open {
   opacity: 0;
 }
 
+/* Botão */
+.seal-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+/* Parar pulse quando abrir */
+.scene.opening .seal-button {
+  animation: none;
+}
+
+/* Imagem */
+.seal-button img {
+  width: clamp(200px, 40vw, 600px);
+  height: auto;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 15px 35px rgba(0,0,0,0.35));
+  transition: transform 0.3s ease;
+}
+
+/* Hover */
+.seal-button:hover img {
+  transform: scale(1.08);
+}
+
+.seal-button:active img {
+  transform: scale(0.95);
+}
+
+/* Pulse corrigido */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Texto */
 .hint-text {
-  position: absolute;
-  top: 62%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
+  margin-top: 20px;
   font-size: 18px;
   color: #556B2F;
   text-align: center;
   letter-spacing: 1px;
-
-  opacity: 0.9;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  opacity: 0;
   animation: fadeHint 2s ease forwards;
 }
 
-.hint-text {
-  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
-
 @keyframes fadeHint {
-  from { opacity: 0; transform: translate(-50%, -45%); }
-  to { opacity: 0.9; transform: translate(-50%, -50%); }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 0.9; transform: translateY(0); }
 }
 
 .scene.opening .hint-text {

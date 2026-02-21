@@ -71,7 +71,6 @@ body {
 
 /* Texto */
 .hint-text {
-  margin-top: 20px;
   font-size: 18px;
   color: #556B2F;
   text-align: center;
@@ -79,6 +78,12 @@ body {
   text-shadow: 0 4px 12px rgba(0,0,0,0.4);
   opacity: 0;
   animation: fadeHint 2s ease forwards;
+}
+
+.hint-text span {
+  display: block;
+  font-size: 0.9em;
+  opacity: 0.8;
 }
 
 @keyframes fadeHint {

@@ -131,7 +131,6 @@ body {
 
 .ornamento-superior {
   position: absolute;
-  bottom: 54%;
   width: 100%;
   opacity: 1;
   pointer-events: none;

@@ -126,6 +126,17 @@ body {
   opacity: 0.8;
   pointer-events: none;
    z-index: 1;
+   transform: scaleX(-1);
+}
+
+.ornamento-superior {
+  position: absolute;
+  bottom: 54%;
+  right: 0;
+  width: 360px;
+  opacity: 1;
+  pointer-events: none;
+   z-index: 1;
 }
 
 .ornamento-lateral {

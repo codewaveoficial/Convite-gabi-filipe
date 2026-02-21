@@ -32,7 +32,7 @@ body.seal-button:active {
 .seal-button {
   position: absolute;
   top: 46%;
-  left: 51.5%;
+  left: 33%;
   transform: translate(-50%, -50%);
   background: none;
   border: none;
@@ -53,6 +53,7 @@ body.seal-button:active {
   display: block;
   filter: drop-shadow(0 15px 35px rgba(0,0,0,0.35));
   transition: transform 0.3s ease;
+  margin: 0 auto;
 }
 
 /* Hover desktop */
@@ -86,12 +87,13 @@ body.open {
 /* Responsividade */
 @media (max-width: 480px) {
   .seal-button img {
-    width: 350px;
+    width: 150%;
   }
 }
 
 .scene {
   position: relative;
+  margin: 0 auto;
   width: 100%;
   height: 100%;
   transition: 

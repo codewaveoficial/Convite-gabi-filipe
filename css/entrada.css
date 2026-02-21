@@ -46,7 +46,7 @@ body {
 
 /* Imagem */
 .seal-button img {
-  width: clamp(200px, 40vw, 600px);
+  width: clamp(350px, 40vw, 600px);
   height: auto;
   height: auto;
   display: block;

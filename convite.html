@@ -79,6 +79,10 @@
 
   </div>
 
+  <audio id="musica" src="./assets/musica.mp3" loop></audio>
+
+<button id="controleMusica" class="controle-musica"></button>
+
   <script>
   const btnConfirmar = document.getElementById("btnConfirmar");
 
@@ -96,6 +100,29 @@
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 
     window.location.href = url;
+  });
+</script>
+<script>
+  const musica = document.getElementById("musica");
+  const controle = document.getElementById("controleMusica");
+
+  // Tenta tocar automaticamente
+  window.addEventListener("load", () => {
+    musica.play().catch(() => {
+      // Se bloquear, toca no primeiro clique do usuário
+      document.body.addEventListener("click", () => {
+        musica.play();
+      }, { once: true });
+    });
+  });
+
+  // Botão de play/pause
+  controle.addEventListener("click", () => {
+    if (musica.paused) {
+      musica.play();
+    } else {
+      musica.pause();
+    }
   });
 </script>
 </body>

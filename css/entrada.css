@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  background-image: url("../assets/fundo.png");
+  background-repeat: no-repeat;
+  background-position: center 48%;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+body.seal-button:active {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+.seal-button {
+  position: absolute;
+  top: 46%;
+  left: 51.5%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.scene.opening .seal-button {
+  animation: none;
+}
+
+/* Imagem do selo */
+.seal-button img {
+  width: 400px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 15px 35px rgba(0,0,0,0.35));
+  transition: transform 0.3s ease;
+}
+
+/* Hover desktop */
+.seal-button:hover img {
+  transform: scale(1.08);
+}
+
+/* Toque mobile */
+.seal-button:active img {
+  transform: scale(0.95);
+}
+
+/* Pulsação suave */
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.03); }
+}
+
+/* Animação de abertura */
+body.open {
+  animation: abrir 1.2s ease forwards;
+}
+
+@keyframes abrir {
+  to {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .seal-button img {
+    width: 350px;
+  }
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: 
+    transform 4s ease,
+    filter 4s ease,
+    opacity 4s ease;
+}
+
+/* Estado ao clicar */
+.scene.opening {
+  transform: scale(1.12);
+  filter: blur(12px) brightness(1.15);
+  opacity: 0;
+}
+
+.hint-text {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  font-size: 18px;
+  color: #556B2F;
+  text-align: center;
+  letter-spacing: 1px;
+
+  opacity: 0.9;
+  animation: fadeHint 2s ease forwards;
+}
+
+.hint-text {
+  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+@keyframes fadeHint {
+  from { opacity: 0; transform: translate(-50%, -45%); }
+  to { opacity: 0.9; transform: translate(-50%, -50%); }
+}
+
+.scene.opening .hint-text {
+  opacity: 0;
+}

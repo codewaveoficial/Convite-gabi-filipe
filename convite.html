@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite de Casamento</title>
+  <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="convite-container">
+
+  <img src="assets/moldura 2.png" class="ornamento-base" alt="">
+  <img src="assets/ornamento-superior.png" class="ornamento-superior" alt="">
+
+    <img src="assets/moldura 2.png" class="ornamento-lateral" alt="">
+
+    <div class="conteudo">
+
+      <div class="monograma">
+        <img src="assets/logo.png" alt="Iniciais do casal">
+      </div>
+
+      <p class="bencao">Com a bênção de Deus e de seus pais</p>
+
+      <h1 class="nomes">Filipe e Gabrielly</h1>
+
+      <div class="data">
+        <span class="mes">Março</span>
+        <span class="dia">14</span>
+        <span class="hora">às 17:30</span>
+      </div>
+
+<div class="acoes">
+
+  <a id="btnConfirmar"
+     href="#"
+     class="botao-circular confirmar">
+     
+    <!-- Ícone check elegante -->
+    <svg viewBox="0 0 24 24" class="icone">
+      <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <span>Confirmar</span>
+  </a>
+
+  <a 
+    href="https://www.google.com/maps/search/?api=1&query=Rua+dos+Bem-te-vis+440,+Morada+de+Laranjeiras,+Serra"
+    target="_blank"
+    rel="noopener"
+    class="botao-circular confirmar"
+  >
+    <!-- Ícone localização elegante -->
+    <svg viewBox="0 0 24 24" class="icone">
+      <path d="M12 21s-6-5.33-6-10a6 6 0 1112 0c0 4.67-6 10-6 10z"
+        stroke="currentColor"
+        stroke-width="2"
+        fill="none"/>
+      <circle cx="12" cy="11" r="2.5" fill="currentColor"/>
+    </svg>
+
+    <span>Local</span>
+  </a>
+
+</div>
+
+      <div class="local">
+        <p class="titulo-local">Local</p>
+        <p class="nome-local">Espaço Batista Sementes</p>
+      </div>
+
+      <div class="ornamento"></div>
+
+      <p class="rodape">Esperamos você para nossa pequena recepção.</p>
+
+    </div>
+
+  </div>
+
+  <script>
+  const btnConfirmar = document.getElementById("btnConfirmar");
+
+  btnConfirmar.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    let nome = prompt("Digite seu nome para confirmar presença:");
+
+    if (!nome) return;
+
+    const mensagem = `Olá! Meu nome é ${nome} e estou confirmando minha presença no casamento ❤️`;
+
+    const numero = "5527981033494";
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+    window.location.href = url;
+  });
+</script>
+</body>
+</html>

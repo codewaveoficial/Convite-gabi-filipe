@@ -313,3 +313,16 @@ body {
     opacity: 1;
   }
 }
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+.botao-selo:focus-visible {
+  outline: none;
+}

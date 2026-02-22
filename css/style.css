@@ -30,7 +30,7 @@ body {
       rgba(255,255,255,0.9) 75%,
       #ffffff 100%
     ),
-    url("../assets/imagem1.png");
+    url("../assets/background.png");
 
   background-size: cover;
   background-position: center top;
@@ -243,4 +243,73 @@ body {
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease;
+  z-index: 999;
+}
+
+.modal-overlay.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-conteudo {
+  background: #fdfcf8;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 320px;
+  width: 85%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: fadeUp 0.4s ease;
+}
+
+.modal-conteudo h2 {
+  font-family: 'Imperial Script', cursive;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.endereco {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.botao-mapa {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #556b2f;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.fechar-modal {
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
